@@ -20,7 +20,7 @@ call vundle#end()            " required
 
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -96,12 +96,13 @@ let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
 let NERDTreeShowBookmarks=1
 let NERDTreeWinPos="left"
-" Automatically open a NERDTree if no files where specified
-autocmd vimenter * if !argc() | NERDTree | endif
 " Close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " Open a NERDTree
 nmap <F5> :NERDTreeToggle<cr>
+" 符号定制
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 
 
 "-------------tagBar相关--------------
@@ -152,3 +153,7 @@ set mouse=a
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 " 自动向前寻找tag
 set tags+=./../tags,./../../tags,./../../../tags
+
+" ------------shell相关----------------
+" 使用ctrl + n 打开zsh，如果更换了shell需要修改
+map <C-n> :!zsh<CR>

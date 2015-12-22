@@ -157,3 +157,7 @@ set tags+=./../tags,./../../tags,./../../../tags
 " ------------shell相关----------------
 " 使用ctrl + n 打开zsh，如果更换了shell需要修改
 map <C-n> :!zsh<CR>
+
+
+" ------------折叠相关----------------
+set foldmethod=indent

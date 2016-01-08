@@ -14,6 +14,7 @@ Plugin 'https://github.com/scrooloose/nerdtree'
 Plugin 'tagbar'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'https://github.com/Valloric/YouCompleteMe'
+Plugin 'https://github.com/joonty/vdebug'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -99,7 +100,7 @@ let NERDTreeWinPos="left"
 " Close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " Open a NERDTree
-nmap <F5> :NERDTreeToggle<cr>
+nmap <F2> :NERDTreeToggle<cr>
 " 符号定制
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
@@ -160,4 +161,16 @@ map <C-n> :!zsh<CR>
 
 
 " ------------折叠相关----------------
-set foldmethod=indent
+"set foldmethod=indent
+
+
+" ------------vdeug相关----------------
+let g:vdebug_options= {
+  \    "port" : 9001,
+  \    "server" : 'localhost',
+  \}
+
+
+" ------------fzf相关----------------
+" https://github.com/junegunn/fzf
+" set rtp+=/usr/local/opt/fzf

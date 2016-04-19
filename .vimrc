@@ -68,12 +68,13 @@ set list listchars=tab:»·,trail:·
 " Show the cursor position all the time
 set ruler
 "在一行的80个字符处显示高亮
-set textwidth=80
-set colorcolumn=+1
+"set textwidth=80
+"set colorcolumn=+1
 " Highlight current line
 au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
-set cursorline cursorcolumn
+"set cursorline cursorcolumn
+set cursorline
 
 
 
@@ -174,3 +175,7 @@ let g:vdebug_options= {
 " ------------fzf相关----------------
 " https://github.com/junegunn/fzf
 " set rtp+=/usr/local/opt/fzf
+"
+
+" ------------默认处于paste模式----------------
+"set paste

@@ -6,7 +6,8 @@ export ZSH=/Users/yujixing/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="bira"
+#ZSH_THEME="bira"
+ZSH_THEME="simple"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -50,12 +51,13 @@ ZSH_THEME="bira"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump vi-mode tmux)
+plugins=(git autojump tmux mvn)
 
 # User configuration
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/yujixing/.rvm/bin"
 export PATH=/Users/yujixing/.bin:$PATH
+export PATH=/Users/yujixing/.composer/vendor/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 export EDITOR=vim
 
@@ -124,3 +126,9 @@ export PATH="/usr/local/sbin:$PATH"
 eval $(thefuck --alias)
 
 
+# homestead链接
+alias vm="ssh vagrant@127.0.0.1 -p 2222"
+
+# 不在不同窗口中共享历史
+unsetopt inc_append_history
+unsetopt share_history

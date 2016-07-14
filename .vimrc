@@ -1,8 +1,8 @@
 " ------------Vundle Config---------------
 set nocompatible              "不兼容vi，Vundle必须配置
-filetype off                  " required
+filetype off                  " required,关闭filetype检测
 
-" set the runtime path to include Vundle and initialize
+" 设置Vundle运行时路径、初始化
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -11,10 +11,9 @@ Plugin 'gmarik/Vundle.vim'
 
 " The following are examples of different formats supported.
 Plugin 'https://github.com/scrooloose/nerdtree'
-Plugin 'tagbar'
+Plugin 'https://github.com/majutsushi/tagbar'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'https://github.com/Valloric/YouCompleteMe'
-Plugin 'https://github.com/joonty/vdebug'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -68,8 +67,8 @@ set list listchars=tab:»·,trail:·
 " Show the cursor position all the time
 set ruler
 "在一行的80个字符处显示高亮
-"set textwidth=80
-"set colorcolumn=+1
+set textwidth=80
+set colorcolumn=+1
 " Highlight current line
 au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
@@ -108,6 +107,7 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 
 
 "-------------tagBar相关--------------
+" 需要依赖ctags，确保系统安装了ctags.
 let g:tagbar_width= 20
 let g:tagbar_autofocus=1
 nmap <F6> :TagbarToggle<CR>
@@ -125,8 +125,8 @@ let g:tagbar_type_markdown = {
 
 
 "-------------powerLine statusBar相关--------------
-set laststatus=2 " Always display the status line
-set statusline+=%{fugitive#statusline()} "  Git Hotness
+"set laststatus=2 " Always display the status line
+"set statusline+=%{fugitive#statusline()} "  Git Hotness
 
 
 
@@ -163,19 +163,6 @@ map <C-n> :!zsh<CR>
 
 " ------------折叠相关----------------
 "set foldmethod=indent
-
-
-" ------------vdeug相关----------------
-let g:vdebug_options= {
-  \    "port" : 9001,
-  \    "server" : 'localhost',
-  \}
-
-
-" ------------fzf相关----------------
-" https://github.com/junegunn/fzf
-" set rtp+=/usr/local/opt/fzf
-"
 
 " ------------默认处于paste模式----------------
 "set paste

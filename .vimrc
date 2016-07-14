@@ -179,3 +179,7 @@ let g:vdebug_options= {
 
 " ------------默认处于paste模式----------------
 "set paste
+
+
+"------------vim使用系统剪切板----------------
+set clipboard=unnamed

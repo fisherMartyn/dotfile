@@ -1,13 +1,20 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/yujixing/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="bira"
-ZSH_THEME="simple"
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
+# Set list of themes to load
+# Setting this variable when ZSH_THEME=random
+# cause zsh load theme from this variable instead of
+# looking in ~/.oh-my-zsh/themes/
+# An empty array have no effect
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,17 +58,15 @@ ZSH_THEME="simple"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump tmux mvn)
+plugins=(
+  git
+)
+
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/yujixing/.rvm/bin"
-export PATH=/Users/yujixing/.bin:$PATH
-export PATH=/Users/yujixing/.composer/vendor/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
-export EDITOR=vim
-
-source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -77,7 +82,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -87,48 +92,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-alias g="git"
-alias gb="git branch"
-alias gco="git checkout"
-alias gcmsg="git commit -m"
-alias gcam="git commit -a -m"
-alias gcmt="git commit"
-alias gamend="git commit --amend -C HEAD"
-alias gst="git status"
-alias gl="git log --oneline --graph --decorate --color=always"
-alias glg="git log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)—     %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative"
-alias glp="git log -p"
-alias clr="clear"
-alias mysync="git push origin fix:yujixing/syncoffline"
-
-#about tmux
-alias tls="tmux ls"
-alias tat="tmux a -t"
-alias tnew="tmux new -s"
-alias tkill="tmux kill-session -t"
-alias phpctag="ctags -R --fields=+aimS --languages=php"
-
-#autojump
-[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
-
-#about my directory
-www="/Users/yujixing/project/meituan/www"
-frame="/Users/yujixing/project/meituan/php_framework/src"
-yiya="/Users/yujixing/project/yiya/YIYAWebsite"
-blog="/Users/yujixing/project/posts"
-
-export PATH=/Users/yujixing/.composer/vendor/bin:$PATH
-#show a motto on load
-motto=`fortune`
-cowsay $motto
-export PATH="/usr/local/sbin:$PATH"
-eval $(thefuck --alias)
-
-
-# homestead链接
-alias vm="ssh vagrant@127.0.0.1 -p 2222"
-
-# 不在不同窗口中共享历史
-unsetopt inc_append_history
-unsetopt share_history

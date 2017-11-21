@@ -13,7 +13,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'https://github.com/scrooloose/nerdtree'
 Plugin 'https://github.com/majutsushi/tagbar'
 Plugin 'Lokaltog/vim-powerline'
-Plugin 'https://github.com/Valloric/YouCompleteMe'
+"YouCompleteMe 太大了，默认不开启了
+"Plugin 'https://github.com/Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -170,3 +171,9 @@ map <C-n> :!zsh<CR>
 
 "------------vim使用系统剪切板----------------
 set clipboard=unnamed
+
+"------------Powerline配置----------------
+set laststatus=2
+set t_Co=256
+let g:Powerline_symbols= 'unicode'
+set encoding=utf8

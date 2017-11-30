@@ -2,3 +2,6 @@
 	co = checkout
 	br = branch
 	st = status
+[user]
+	name = fisherMartyn
+	email = fisher_thu@foxmail.com
